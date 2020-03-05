@@ -2,6 +2,7 @@
   "name": "cred",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://daniel-lucas-silva.github.io/siape",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -10,16 +11,26 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "framework7": "^5.4.5",
+    "framework7-icons": "^3.0.0",
+    "framework7-react": "^5.4.5",
+    "material-design-icons": "^3.0.1",
+    "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
-    "typescript": "~3.7.2"
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.7.2",
+    "xlsx": "^0.15.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "copy-fonts": "cpy node_modules/framework7-icons/fonts/*.* src/fonts && cpy node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2} src/fonts"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +46,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cpy-cli": "^3.1.0",
+    "gh-pages": "^2.2.0"
   }
 }
